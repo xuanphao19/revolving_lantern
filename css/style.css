@@ -14,6 +14,7 @@ body {
 .container {
   position: absolute;
   width: 600px;
+  height: 100vh;
   padding-top: 120px;
   margin: auto;
   -webkit-mask: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
