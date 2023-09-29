@@ -13,9 +13,11 @@ body {
 }
 .container {
   position: absolute;
-  width: 600px;
+  display: flex;
+  justify-content: center;
+  width: 1200px;
   height: 100vh;
-  padding-top: 120px;
+  padding-top: 150px;
   margin: auto;
   -webkit-mask: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
@@ -27,7 +29,7 @@ body {
   height: 270px;
   transition: 1.5s;
   transform-style: preserve-3d;
-  transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+  transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
   animation: rotateY 25s linear infinite;
 }
 .box span {
@@ -39,7 +41,7 @@ body {
   transform-origin: center;
   transform-style: preserve-3d;
   border-radius: 0 0 100vw 100vw;
-  transform: rotateY(calc(var(--i) * 45deg)) translateZ(450px);
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(512px);
   -webkit-box-reflect: below 0px linear-gradient(transparent 35%, #0004);
   overflow: clip;
 }
