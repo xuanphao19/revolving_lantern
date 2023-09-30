@@ -12,26 +12,26 @@ body {
   transform-style: preserve-3d;
 }
 .container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
+  position: relative;
   width: 1200px;
   height: 100vh;
   padding-top: 150px;
-  margin: auto;
+  margin-top: -150px;
   -webkit-mask: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
   mask: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
   transform-style: preserve-3d;
 }
 .box {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  translate: -50% 0%;
   width: 200px;
   height: 270px;
   transition: 1.5s;
   transform-style: preserve-3d;
   transform: perspective(1500px) rotateY(0deg) rotateX(2deg);
-  animation: rotateY 20s linear infinite;
+  animation: rotateY 30s linear infinite;
 }
 .box span {
   position: absolute;
@@ -44,11 +44,10 @@ body {
   border-radius: 0 0 100vw 100vw;
   transform: rotateY(calc(var(--i) * 45deg));
   transform: rotateY(calc(var(--i) * 45deg)) translateZ(512px);
-  -webkit-box-reflect: below 0px linear-gradient(transparent 35%, #0004);
+  -webkit-box-reflect: below 0px linear-gradient(transparent 25%, #0006);
   overflow: clip;
 }
 .box span img {
-  display: flex;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -57,19 +56,39 @@ body {
   object-fit: cover;
   user-select: none;
   border-radius: 99999px;
+  transform-style: preserve-3d;
   transition: 0.5s;
 }
 
 .box span:hover > .items {
   scale: 1.4;
-  transform: translateY(-25px);
+  translate: 0 -35px;
+  cursor: pointer;
 }
-
 @keyframes rotateY {
   0% {
     transform: perspective(1200px) rotateY(0deg) rotateX(2deg);
   }
   100% {
     transform: perspective(1200px) rotateY(-360deg) rotateX(2deg);
+  }
+}
+
+.box span img {
+  animation: rotateZ 1s linear infinite;
+}
+
+@keyframes rotateZ {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(1deg);
+  }
+  75% {
+    transform: rotateZ(-1deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
   }
 }
