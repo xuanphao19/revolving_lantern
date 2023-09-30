@@ -58,6 +58,7 @@ body {
   border-radius: 99999px;
   transform-style: preserve-3d;
   transition: 0.5s;
+  animation: rotateZ 1s linear infinite;
 }
 
 .box span:hover > .items {
@@ -72,10 +73,6 @@ body {
   100% {
     transform: perspective(1200px) rotateY(-360deg) rotateX(2deg);
   }
-}
-
-.box span img {
-  animation: rotateZ 1s linear infinite;
 }
 
 @keyframes rotateZ {
